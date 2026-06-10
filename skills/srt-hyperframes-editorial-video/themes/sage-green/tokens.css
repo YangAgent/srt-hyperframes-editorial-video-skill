@@ -1,0 +1,60 @@
+/* Theme: sage-green */
+:root {
+  --shell: #ded2c0;
+  --surface: #f4eadc;
+  --surface-2: #ebe0d0;
+  --surface-3: #d8c8b4;
+  --text: #29251f;
+  --text-2: #433d34;
+  --text-mute: #766c5f;
+  --text-faint: #a99c8a;
+  --ghost-type-color: rgba(108, 139, 114, 0.075);
+  --rule: #b9c1b3;
+  --accent: #6c8b72;
+  --accent-soft: rgba(108, 139, 114, 0.14);
+  --accent-glow: rgba(108, 139, 114, 0.34);
+
+  --font-display-cn: "Noto Serif SC", "Source Han Serif SC", serif;
+  --font-display-en: "Source Serif 4", "Playfair Display", Georgia, serif;
+  --font-body: "Noto Sans SC", "Source Han Sans SC", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", "JetBrains Mono", ui-monospace, monospace;
+  --font-features: "ss01", "tnum", "lnum";
+
+  --stage-pad-x: 112px;
+  --stage-pad-y: 84px;
+  --r-flat: 0;
+  --r-sm: 4px;
+  --rule-w: 1px;
+  --rule-style: solid;
+  --hero-num-font: var(--font-display-en);
+  --hero-num-style: normal;
+  --hero-num-weight: 700;
+  --hero-num-track: -0.025em;
+
+  --type-kicker: 18px;
+  --type-meta: 20px;
+  --type-body-min: 30px;
+  --type-body: 34px;
+  --type-callout: 38px;
+  --type-node: 44px;
+  --type-result: 64px;
+  --type-headline-sm: 72px;
+  --type-headline-md: 88px;
+  --type-headline-lg: 112px;
+  --type-headline-xl: 132px;
+  --type-stat: 190px;
+  --type-ghost: 320px;
+
+  --dur-enter: 0.72s;
+  --dur-emphasis: 1.08s;
+  --ease-enter: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-draw: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-impact: cubic-bezier(0.34, 1.18, 0.64, 1);
+
+  --surface-vignette:
+    radial-gradient(circle at 16% 12%, rgba(128, 153, 132, 0.09) 0%, rgba(128, 153, 132, 0.028) 22%, rgba(244, 234, 220, 0) 44%),
+    radial-gradient(circle at 78% 18%, rgba(255, 255, 255, 0.34) 0%, rgba(255, 255, 255, 0) 34%),
+    linear-gradient(135deg, rgba(108, 139, 114, 0.035) 0%, rgba(244, 234, 220, 0) 42%),
+    radial-gradient(circle at 50% 60%, rgba(244, 234, 220, 0) 0%, rgba(92, 78, 60, 0.13) 100%);
+  --grain-opacity: 0.14;
+}

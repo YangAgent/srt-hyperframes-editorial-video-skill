@@ -1,0 +1,27 @@
+{
+  "id": "dark-editorial",
+  "name": "Dark Editorial",
+  "nameZh": "暗色风格",
+  "description": "Warm espresso-black video theme with fire-orange accent, Chinese serif headlines, italic display serif details, mono metadata, hairlines, generous negative space, and cinematic motion.",
+  "descriptionZh": "暖黑 espresso 底、火橙强调、中文衬线大标题、英文 italic serif、等宽元信息、细线和大留白，适合高级感暗调 Editorial 视频。",
+  "mood": [
+    "dark",
+    "editorial",
+    "serif",
+    "cinematic",
+    "premium"
+  ],
+  "bestFor": [
+    "深度解释",
+    "产品叙事",
+    "AI 工作流",
+    "技术观点",
+    "高级感 Editorial 视频"
+  ],
+  "preview": {
+    "shell": "#0d0b09",
+    "surface": "#1a1714",
+    "text": "#f5f0e5",
+    "accent": "#ff4a2b"
+  }
+}

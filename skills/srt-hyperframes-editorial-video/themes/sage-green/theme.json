@@ -1,0 +1,31 @@
+{
+  "id": "sage-green",
+  "name": "sage-green",
+  "nameZh": "鼠尾草绿风格",
+  "description": "Warm sage-green Editorial video theme with tan paper surfaces, muted sage accent, serif editorial headlines, quiet hairlines, gentle paper atmosphere, and calm documentary pacing.",
+  "descriptionZh": "淡棕暖纸面、鼠尾草绿强调、衬线编辑标题、安静细线、柔和纸面氛围和克制纪录片节奏，适合人文解释、生活方式、品牌叙事、可持续议题和温和知识型 Editorial 视频。",
+  "mood": [
+    "light",
+    "sage",
+    "paper",
+    "soft",
+    "editorial",
+    "calm",
+    "natural"
+  ],
+  "bestFor": [
+    "人文解释",
+    "生活方式",
+    "品牌叙事",
+    "可持续议题",
+    "知识型内容",
+    "产品分析",
+    "温和观点表达"
+  ],
+  "preview": {
+    "shell": "#ded2c0",
+    "surface": "#f4eadc",
+    "text": "#29251f",
+    "accent": "#6c8b72"
+  }
+}

@@ -1,0 +1,38 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Claude Code 本地配置
+.claude/
+
+# HyperFrames 运行时生成的项目目录
+# 每次从 SRT 生成视频时会创建 hyperframes-editorial-video-projects/ 目录
+hyperframes-editorial-video-projects/
+
+# HyperFrames Studio 缩略图缓存
+.thumbnails/
+.thumbnails.bak-*/
+
+# 渲染输出
+renders/
+output.mp4
+output-4k.mp4
+render.log
+render-4k.log
+
+# Node
+node_modules/
+package-lock.json
+
+# 编辑器和 IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 临时文件
+*.tmp
+*.log

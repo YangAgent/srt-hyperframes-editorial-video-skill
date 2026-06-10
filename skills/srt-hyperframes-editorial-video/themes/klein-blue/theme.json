@@ -1,0 +1,31 @@
+{
+  "id": "klein-blue",
+  "name": "klein-blue",
+  "nameZh": "克莱因蓝风格",
+  "description": "Light Swiss-international Editorial video theme with high-grey white surfaces, near-black sans typography, International Klein Blue as the only accent, strict hairlines, square geometry, and calm grid-driven motion.",
+  "descriptionZh": "高级灰白底、近黑无衬线、克莱因蓝单一锚点、极细分割线、直角几何和冷静网格秩序，适合科技产品、数据解释、工程方法和发布会式 Editorial 视频。",
+  "mood": [
+    "light",
+    "swiss",
+    "blue-white",
+    "sans-serif",
+    "grid",
+    "rational",
+    "technical"
+  ],
+  "bestFor": [
+    "AI 产品发布",
+    "科技产品",
+    "数据解释",
+    "工程方法",
+    "设计系统",
+    "年度总结",
+    "决策汇报"
+  ],
+  "preview": {
+    "shell": "#dfe3ea",
+    "surface": "#f2f4f7",
+    "text": "#101418",
+    "accent": "#002fa7"
+  }
+}

@@ -1,0 +1,77 @@
+/* Theme: kraft-editorial */
+:root {
+  --shell: #d2bea0;
+  --surface: #eedfc7;
+  --surface-2: #f6ead5;
+  --surface-3: #e0d0b6;
+  --text: #2a1e13;
+  --text-2: #3a2a1d;
+  --text-mute: #76634f;
+  --text-faint: #a89378;
+  --ghost-type-color: rgba(42, 30, 19, 0.07);
+  --rule: #a89378;
+  --accent: #8f4a23;
+  --accent-soft: rgba(143, 74, 35, 0.14);
+  --accent-glow: rgba(143, 74, 35, 0.34);
+
+  --font-display-cn: "Noto Serif SC", "Source Han Serif SC", serif;
+  --font-display-en: "Playfair Display", "Source Serif 4", Georgia, serif;
+  --font-body: "Noto Sans SC", "Source Han Sans SC", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", "JetBrains Mono", ui-monospace, monospace;
+  --font-features: "ss01", "tnum", "lnum";
+
+  --stage-pad-x: 100px;
+  --stage-pad-y: 72px;
+  --r-flat: 0;
+  --r-sm: 0;
+  --rule-w: 1px;
+  --rule-style: solid;
+  --hero-num-font: var(--font-display-en);
+  --hero-num-style: italic;
+  --hero-num-weight: 800;
+  --hero-num-track: -0.03em;
+
+  --type-kicker: 18px;
+  --type-meta: 20px;
+  --type-body-min: 30px;
+  --type-body: 34px;
+  --type-callout: 38px;
+  --type-node: 44px;
+  --type-result: 64px;
+  --type-headline-sm: 72px;
+  --type-headline-md: 88px;
+  --type-headline-lg: 112px;
+  --type-headline-xl: 132px;
+  --type-stat: 190px;
+  --type-ghost: 320px;
+
+  --dur-enter: 0.78s;
+  --dur-emphasis: 1.2s;
+  --ease-enter: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-draw: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-impact: cubic-bezier(0.34, 1.26, 0.64, 1);
+
+  --surface-vignette:
+    linear-gradient(
+      90deg,
+      rgba(238, 223, 199, 0) 0%,
+      rgba(238, 223, 199, 0) 24%,
+      rgba(238, 223, 199, 0.68) 40%,
+      rgba(238, 223, 199, 1) 48%,
+      rgba(238, 223, 199, 1) 52%,
+      rgba(238, 223, 199, 0.68) 60%,
+      rgba(238, 223, 199, 0) 76%,
+      rgba(238, 223, 199, 0) 100%
+    ),
+    linear-gradient(
+        rgba(42, 30, 19, 0.060) 1px,
+        transparent 1px
+      ) 0 0 / 64px 64px,
+    linear-gradient(
+        90deg,
+        rgba(42, 30, 19, 0.056) 1px,
+        transparent 1px
+      ) 0 0 / 64px 64px,
+    radial-gradient(circle at 50% 52%, rgba(238, 223, 199, 0) 0%, rgba(74, 49, 26, 0.16) 100%);
+  --grain-opacity: 0.22;
+}

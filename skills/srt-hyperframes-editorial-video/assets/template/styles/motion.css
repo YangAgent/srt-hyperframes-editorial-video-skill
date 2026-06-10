@@ -1,0 +1,13 @@
+[data-anim] {
+  will-change: transform, opacity, filter, clip-path;
+}
+
+.ed-draw-line {
+  transform-origin: left center;
+}
+
+.ed-path[data-anim],
+.ed-connector[data-anim] {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}

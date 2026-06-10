@@ -1,0 +1,32 @@
+{
+  "id": "kraft-editorial",
+  "name": "Kraft Editorial",
+  "nameZh": "牛皮纸风格",
+  "description": "Light kraft-paper editorial Editorial video theme with warm paper surfaces, deep brown serif typography, aged stamp-brown accent, square panels, quiet hairlines, and documentary pacing.",
+  "descriptionZh": "暖米牛皮纸底、深棕衬线、旧印章棕强调、0 圆角、细密发丝线和安静印刷节奏，适合怀旧、人文、阅读、历史、文学和纪录片式 Editorial 视频。",
+  "mood": [
+    "light",
+    "kraft-paper",
+    "editorial",
+    "serif",
+    "nostalgic",
+    "documentary",
+    "calm"
+  ],
+  "bestFor": [
+    "热点解读",
+    "时事评论",
+    "深度报道",
+    "人文阅读",
+    "历史文学",
+    "产品分析",
+    "数据解释",
+    "知识型内容"
+  ],
+  "preview": {
+    "shell": "#d2bea0",
+    "surface": "#eedfc7",
+    "text": "#2a1e13",
+    "accent": "#8f4a23"
+  }
+}

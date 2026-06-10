@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, initial-scale=1.0" />
+    <title>HyperFrames Editorial Video</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,400;1,500;1,700&family=Source+Serif+4:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/motion.css" />
+    <style>
+      .title-layout {
+        justify-content: center;
+      }
+
+      .title-meta {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        margin-top: 12px;
+      }
+
+      .chart-layout {
+        display: flex;
+        gap: 78px;
+        align-items: center;
+      }
+
+      .chart-copy {
+        flex: 0 0 38%;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+
+      .chart-headline {
+        margin: 0;
+        font-size: 86px;
+        line-height: 1.08;
+      }
+
+      .chart-note {
+        max-width: 580px;
+        font-size: 30px;
+        line-height: 1.42;
+        color: var(--text-2);
+      }
+
+      .chart-board {
+        flex: 1 1 auto;
+        position: relative;
+        height: 650px;
+        padding: 42px 46px;
+        background: var(--surface-2);
+        border: var(--rule-w) var(--rule-style) var(--rule);
+        border-radius: var(--r-sm);
+      }
+
+      .chart-svg {
+        position: absolute;
+        inset: 42px 46px 118px;
+        width: calc(100% - 92px);
+        height: calc(100% - 160px);
+      }
+
+      .chart-labels {
+        position: absolute;
+        left: 72px;
+        right: 72px;
+        bottom: 42px;
+        display: flex;
+        gap: 32px;
+      }
+
+      .chart-label {
+        flex: 1 1 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        color: var(--text-2);
+      }
+
+      .chart-label strong {
+        font-size: 30px;
+        line-height: 1.1;
+      }
+
+      .chart-label span {
+        font-size: 18px;
+        color: var(--text-mute);
+      }
+
+      .chart-stat {
+        position: absolute;
+        right: 62px;
+        top: 42px;
+        text-align: right;
+      }
+
+      .chart-stat .ed-stat {
+        font-size: 122px;
+      }
+
+      .transform-layout {
+        display: flex;
+        gap: 72px;
+        align-items: center;
+      }
+
+      .state-copy {
+        flex: 0 0 42%;
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+      }
+
+      .state-headline {
+        margin: 0;
+        font-size: 84px;
+        line-height: 1.08;
+      }
+
+      .state-board {
+        flex: 1 1 auto;
+        position: relative;
+        height: 650px;
+      }
+
+      .state-cluster,
+      .state-result {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .state-cluster {
+        flex-wrap: wrap;
+        gap: 26px;
+      }
+
+      .state-chip {
+        flex: 1 1 calc(50% - 26px);
+        min-height: 138px;
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: var(--surface-2);
+        border: var(--rule-w) var(--rule-style) var(--rule);
+        border-radius: var(--r-sm);
+      }
+
+      .state-chip strong,
+      .state-result-block strong {
+        font-size: 34px;
+        line-height: 1.1;
+      }
+
+      .state-chip span,
+      .state-result-block span {
+        font-size: 20px;
+        color: var(--text-mute);
+      }
+
+      .state-result {
+        opacity: 0;
+      }
+
+      .state-result-block {
+        width: 560px;
+        min-height: 360px;
+        padding: 44px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: var(--accent-soft);
+        border: var(--rule-w) var(--rule-style) var(--accent);
+        border-radius: var(--r-sm);
+      }
+
+      .state-path {
+        position: absolute;
+        inset: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="main"
+      data-composition-id="main"
+      data-width="1920"
+      data-height="1080"
+      data-start="0"
+      data-duration="13.5"
+    >
+      <!-- ED_DEBUG_AUDIO_SLOT_START -->
+      <!-- Debug audio is inserted here during preview-only debug mode. Keep empty for normal renders. -->
+      <!-- ED_DEBUG_AUDIO_SLOT_END -->
+      <section id="scene-title" class="ed-scene">
+        <div class="ed-ghost-type" data-anim="ambient" style="left: 980px; top: 112px;">ED</div>
+        <div class="scene-pad title-layout">
+          <div class="ed-kicker label-mono" data-anim="kicker">Statement Hero</div>
+          <h1 class="ed-headline serif-cn" data-anim="title">
+            先把文字<br />
+            翻译成 <span class="serif-it ed-accent">visual logic</span>
+          </h1>
+          <p class="ed-lead" data-anim="lead">
+            杂志感负责气质，图形和动画负责理解。
+          </p>
+          <div class="title-meta">
+            <span class="ed-badge" data-anim="badge">TEXT: restrained</span>
+            <span class="ed-badge" data-anim="badge">GRAPHICS: explanatory</span>
+          </div>
+          <hr class="rule ed-draw-line" data-anim="rule" />
+        </div>
+      </section>
+
+      <section id="scene-chart" class="ed-scene" style="opacity: 0;">
+        <div class="ed-ghost-type" data-anim="ambient" style="left: -110px; bottom: 44px;">DATA</div>
+        <div class="scene-pad chart-layout">
+          <div class="chart-copy">
+            <div class="ed-kicker label-mono" data-anim="kicker">Chart Explain</div>
+            <h2 class="serif-cn chart-headline" data-anim="title">
+              复杂度集中在<br />
+              <span class="ed-accent">解释动画</span>
+            </h2>
+            <p class="chart-note" data-anim="lead">
+              原文不再整段上屏，而是转成阶段、趋势和关键压力点。
+            </p>
+          </div>
+          <div class="chart-board ed-chart" data-anim="chart-board">
+            <div class="chart-stat">
+              <div class="label-mono" data-anim="stat-label">Peak Load</div>
+              <div class="ed-stat ed-accent" data-anim="counter">0</div>
+            </div>
+            <svg class="chart-svg" viewBox="0 0 760 430" aria-hidden="true">
+              <line class="ed-chart-axis" x1="40" y1="380" x2="720" y2="380" />
+              <line class="ed-chart-axis" x1="40" y1="80" x2="40" y2="380" />
+              <rect class="ed-chart-bar" data-anim="bar-a" x="120" y="248" width="104" height="132" />
+              <rect class="ed-chart-bar" data-anim="bar-b" x="330" y="188" width="104" height="192" />
+              <rect class="ed-chart-bar is-accent" data-anim="bar-c" x="540" y="96" width="104" height="284" />
+              <path
+                class="ed-path"
+                data-anim="trend"
+                pathLength="1"
+                d="M 86 304 C 190 286, 246 256, 316 238 S 468 214, 560 128 S 636 116, 694 92"
+              />
+              <circle class="ed-marker" data-anim="marker" cx="644" cy="96" r="10" />
+            </svg>
+            <div class="chart-labels">
+              <div class="chart-label" data-anim="label">
+                <strong class="serif-cn">输入整理</strong>
+                <span class="label-mono">raw text</span>
+              </div>
+              <div class="chart-label" data-anim="label">
+                <strong class="serif-cn">视觉转译</strong>
+                <span class="label-mono">diagram first</span>
+              </div>
+              <div class="chart-label" data-anim="label">
+                <strong class="serif-cn">动画解释</strong>
+                <span class="label-mono">gsap + svg</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="scene-transform" class="ed-scene" style="opacity: 0;">
+        <div class="ed-ghost-type" data-anim="ambient" style="right: -180px; top: 112px;">STATE</div>
+        <div class="scene-pad transform-layout">
+          <div class="state-copy">
+            <div class="ed-kicker label-mono" data-anim="kicker">Transformation State</div>
+            <h2 class="serif-cn state-headline" data-anim="title">
+              从段落墙<br />
+              重组成解释图
+            </h2>
+            <p class="ed-lead" data-anim="lead">
+              旧状态被压缩、归类、连接，最后形成可观看的结构。
+            </p>
+          </div>
+          <div class="state-board" data-anim="board">
+            <svg class="ed-svg-layer state-path" viewBox="0 0 760 650" aria-hidden="true">
+              <path
+                class="ed-connector is-muted"
+                data-anim="state-path"
+                pathLength="1"
+                d="M 132 154 C 272 250, 394 256, 520 326"
+              />
+              <path
+                class="ed-connector"
+                data-anim="state-path"
+                pathLength="1"
+                d="M 124 492 C 280 394, 410 382, 520 326"
+              />
+            </svg>
+            <div class="state-cluster">
+              <div class="state-chip" data-anim="old-node">
+                <strong class="serif-cn">长段落</strong>
+                <span class="label-mono">too much text</span>
+              </div>
+              <div class="state-chip" data-anim="old-node">
+                <strong class="serif-cn">弱动画</strong>
+                <span class="label-mono">fade only</span>
+              </div>
+              <div class="state-chip" data-anim="old-node">
+                <strong class="serif-cn">无关系</strong>
+                <span class="label-mono">no diagram</span>
+              </div>
+              <div class="state-chip" data-anim="old-node">
+                <strong class="serif-cn">像 PPT</strong>
+                <span class="label-mono">static slide</span>
+              </div>
+            </div>
+            <div class="state-result" data-anim="result">
+              <div class="state-result-block">
+                <span class="ed-badge">NEW STATE</span>
+                <strong class="serif-cn">图形对象先建立，文字只负责命名。</strong>
+                <div class="ed-callout" data-anim="callout">
+                  <span class="ed-marker"></span>
+                  <span class="label-mono">explain with motion</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true, defaults: { ease: "power2.out" } });
+
+      const peak = { value: 0 };
+      const counter = document.querySelector("#scene-chart [data-anim='counter']");
+
+      gsap.set("#scene-chart, #scene-transform", { opacity: 0 });
+      gsap.set(".ed-draw-line", { scaleX: 0 });
+      gsap.set("#scene-chart [data-anim='bar-a'], #scene-chart [data-anim='bar-b'], #scene-chart [data-anim='bar-c']", { attr: { y: 380, height: 0 } });
+      gsap.set("#scene-chart [data-anim='trend'], #scene-transform [data-anim='state-path']", { strokeDashoffset: 1 });
+      gsap.set("#scene-chart [data-anim='marker']", { scale: 0, transformOrigin: "center center" });
+      gsap.set("#scene-transform [data-anim='result']", { opacity: 0, scale: 0.92 });
+      gsap.set("#scene-transform [data-anim='callout']", { opacity: 0, x: -22 });
+
+      tl.addLabel("title", 0);
+      tl.fromTo("#scene-title [data-anim='kicker']", { y: 22, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power3.out" }, "title+=0.18");
+      tl.fromTo("#scene-title [data-anim='title']", { y: 64, opacity: 0, filter: "blur(18px)", scale: 0.985 }, { y: 0, opacity: 1, filter: "blur(0px)", scale: 1, duration: 0.95, ease: "expo.out" }, "title+=0.36");
+      tl.fromTo("#scene-title [data-anim='lead']", { x: -34, opacity: 0 }, { x: 0, opacity: 1, duration: 0.62, ease: "power2.out" }, "title+=0.9");
+      tl.fromTo("#scene-title [data-anim='badge']", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.42, stagger: 0.1, ease: "power3.out" }, "title+=1.08");
+      tl.to("#scene-title [data-anim='rule']", { scaleX: 1, duration: 0.72, ease: "power4.out" }, "title+=1.22");
+      tl.to("#scene-title [data-anim='ambient']", { x: -26, y: 12, duration: 3.2, ease: "sine.inOut" }, "title+=0.2");
+
+      tl.addLabel("toChart", 3.65);
+      tl.set("#scene-chart", { opacity: 1 }, "toChart");
+      tl.set("#scene-title", { opacity: 0 }, "toChart");
+
+      tl.addLabel("chart", 3.78);
+      tl.fromTo("#scene-chart [data-anim='kicker']", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, "chart+=0.1");
+      tl.fromTo("#scene-chart [data-anim='title']", { opacity: 0, x: -44 }, { opacity: 1, x: 0, duration: 0.68, ease: "expo.out" }, "chart+=0.24");
+      tl.fromTo("#scene-chart [data-anim='lead']", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, "chart+=0.62");
+      tl.fromTo("#scene-chart [data-anim='chart-board']", { opacity: 0, y: 42, scale: 0.985 }, { opacity: 1, y: 0, scale: 1, duration: 0.68, ease: "power3.out" }, "chart+=0.38");
+      tl.fromTo("#scene-chart [data-anim='stat-label']", { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 0.38 }, "chart+=0.82");
+      tl.to(peak, { value: 87, duration: 1.1, ease: "power3.out", onUpdate: () => { counter.textContent = Math.round(peak.value); } }, "chart+=0.92");
+      tl.to("#scene-chart [data-anim='bar-a']", { attr: { y: 248, height: 132 }, duration: 0.82, ease: "power4.out" }, "chart+=0.98");
+      tl.to("#scene-chart [data-anim='bar-b']", { attr: { y: 188, height: 192 }, duration: 0.82, ease: "power4.out" }, "chart+=1.12");
+      tl.to("#scene-chart [data-anim='bar-c']", { attr: { y: 96, height: 284 }, duration: 0.82, ease: "power4.out" }, "chart+=1.26");
+      tl.to("#scene-chart [data-anim='trend']", { strokeDashoffset: 0, duration: 1.08, ease: "power3.inOut" }, "chart+=1.22");
+      tl.fromTo("#scene-chart [data-anim='label']", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.42, stagger: 0.1 }, "chart+=1.48");
+      tl.to("#scene-chart [data-anim='marker']", { scale: 1, duration: 0.42, ease: "back.out(1.7)" }, "chart+=2.02");
+      tl.to("#scene-chart [data-anim='ambient']", { x: 34, duration: 4.4, ease: "sine.inOut" }, "chart+=0.2");
+
+      tl.addLabel("toTransform", 8.35);
+      tl.set("#scene-transform", { opacity: 1 }, "toTransform");
+      tl.set("#scene-chart", { opacity: 0 }, "toTransform");
+
+      tl.addLabel("transform", 8.48);
+      tl.fromTo("#scene-transform [data-anim='kicker']", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, "transform+=0.1");
+      tl.fromTo("#scene-transform [data-anim='title']", { opacity: 0, x: -42 }, { opacity: 1, x: 0, duration: 0.68, ease: "expo.out" }, "transform+=0.25");
+      tl.fromTo("#scene-transform [data-anim='lead']", { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.55 }, "transform+=0.7");
+      tl.fromTo("#scene-transform [data-anim='board']", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.62, ease: "power3.out" }, "transform+=0.42");
+      tl.fromTo("#scene-transform [data-anim='old-node']", { opacity: 0, y: 28, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.46, stagger: 0.1 }, "transform+=0.72");
+      tl.to("#scene-transform [data-anim='state-path']", { strokeDashoffset: 0, duration: 0.86, stagger: 0.16, ease: "power3.inOut" }, "transform+=1.3");
+      tl.to("#scene-transform [data-anim='old-node']", { x: 84, y: -12, scale: 0.72, opacity: 0.28, duration: 0.72, stagger: { amount: 0.18, from: "edges" }, ease: "power3.inOut" }, "transform+=1.74");
+      tl.to("#scene-transform [data-anim='result']", { opacity: 1, scale: 1, duration: 0.72, ease: "expo.out" }, "transform+=2.18");
+      tl.to("#scene-transform [data-anim='callout']", { opacity: 1, x: 0, duration: 0.46, ease: "power3.out" }, "transform+=2.78");
+      tl.to("#scene-transform [data-anim='ambient']", { x: -24, y: 14, duration: 4.0, ease: "sine.inOut" }, "transform+=0.15");
+      tl.to("#scene-transform", { opacity: 0, duration: 0.55, ease: "sine.inOut" }, 12.95);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
