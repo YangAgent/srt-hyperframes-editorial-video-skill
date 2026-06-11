@@ -14,10 +14,10 @@
   --accent-soft: rgba(255, 74, 43, 0.14);
   --accent-glow: rgba(255, 74, 43, 0.55);
 
-  --font-display-cn: "Noto Serif SC", "Source Han Serif SC", serif;
-  --font-display-en: "Playfair Display", "Source Serif 4", Georgia, serif;
-  --font-body: "Noto Sans SC", "Source Han Sans SC", -apple-system, sans-serif;
-  --font-mono: "IBM Plex Mono", "JetBrains Mono", ui-monospace, monospace;
+  --font-display-cn: "Source Han Serif SC", serif;
+  --font-display-en: Georgia, serif;
+  --font-body: "Source Han Sans SC", -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --font-features: "ss01", "tnum", "lnum";
 
   --stage-pad-x: 140px;

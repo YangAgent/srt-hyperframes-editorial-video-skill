@@ -14,10 +14,10 @@
   --accent-soft: rgba(0, 47, 167, 0.10);
   --accent-glow: rgba(0, 47, 167, 0.32);
 
-  --font-display-cn: "Noto Sans SC", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  --font-display-cn: "PingFang SC", "Helvetica Neue", Arial, sans-serif;
   --font-display-en: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-body: "Noto Sans SC", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
-  --font-mono: "IBM Plex Mono", "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+  --font-body: "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", ui-monospace, monospace;
   --font-features: "ss01", "tnum", "lnum";
 
   --stage-pad-x: 96px;
